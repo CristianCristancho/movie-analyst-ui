@@ -53,9 +53,9 @@ pipeline {
 					echo 'Deploying....'  
 					input 'Accept deployment?'
 					//sh 'docker stop $(docker ps -aq)'
-					//sh 'docker stop challjenk'
 					sh 'docker stop challjenkNew'
-					//sh 'docker rm challjenk'
+					sh 'docker stop challjenk'
+					sh 'docker rm challjenk'
 					sh 'docker run --name challjenk -d -p 8000:3030 cristiancristancho/rampup_front:latest'
                                  					
 				}                 
