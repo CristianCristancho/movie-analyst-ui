@@ -6,9 +6,8 @@ COPY package*.json ./
 
 RUN npm install
 
-RUN npm link test
 COPY . .
 
-EXPOSE 8000
+EXPOSE 3030
 
 CMD [ "npm", "start" ]
