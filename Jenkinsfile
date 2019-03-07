@@ -44,7 +44,7 @@ pipeline {
 					//sh 'docker rmi $( docker images | grep "^<none>" | awk "{print $3}" )'
 					//sh 'docker stop challjenkNew'
 					//sh 'docker rm challjenkNew'
-					sh 'docker run --rm --name challjenkNew -d -p 65000:8000 rampupfront:${BUILD_NUMBER}'  
+					sh 'docker run --rm --name challjenkNew -d -p 65000:3030 rampupfront:${BUILD_NUMBER}'  
                                  					
 				}                 
 			}                  
@@ -56,7 +56,7 @@ pipeline {
 					//sh 'docker stop challjenk'
 					sh 'docker stop challjenkNew'
 					//sh 'docker rm challjenk'
-					sh 'docker run --name challjenk -d -p 8000:8000 cristiancristancho/rampup_front:latest'
+					sh 'docker run --name challjenk -d -p 8000:3030 cristiancristancho/rampup_front:latest'
                                  					
 				}                 
 			}         
