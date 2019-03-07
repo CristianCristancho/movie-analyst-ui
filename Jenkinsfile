@@ -30,7 +30,7 @@ pipeline {
 				steps {
 					echo 'pushing'
 					sh 'docker login -u $DockerUser -p $DockerPass'
-					sh 'docker tag cristiancristancho/rampup_front:${BUILD_NUMBER}'
+					sh 'docker tag cristiancristancho/rampup_front cristiancristancho/rampup_front:${BUILD_NUMBER}'
 					sh 'docker push cristiancristancho/rampup_front:${BUILD_NUMBER}'
 
 				}
