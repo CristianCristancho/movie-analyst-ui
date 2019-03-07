@@ -15,7 +15,7 @@ pipeline {
 				steps {                                 
 					echo 'Building..'
 					//sh 'if [ "$(docker images ${reg} -q)" != "" ]; then docker rmi -f $(docker images ${reg} -q --no-trunc); fi'
-					sh 'docker build --rm . -t rampup_front:${BUILD_NUMBER}'                         
+					sh 'docker build --rm . -t cristiancristancho/rampup_front'                         
 				}                 
 			} 
 			/*               
@@ -44,7 +44,7 @@ pipeline {
 					//sh 'docker rmi $( docker images | grep "^<none>" | awk "{print $3}" )'
 					//sh 'docker stop challjenkNew'
 					//sh 'docker rm challjenkNew'
-					sh 'docker run --rm --name challjenkNew -d -p 65000:3030 rampup_front:${BUILD_NUMBER}'  
+					sh 'docker run --rm --name challjenkNew -d -p 65000:3030 cristiancristancho/rampup_front:${BUILD_NUMBER}'  
                                  					
 				}                 
 			}                  
