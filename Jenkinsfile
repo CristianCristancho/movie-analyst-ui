@@ -44,7 +44,7 @@ pipeline {
 					//sh 'docker rmi $( docker images | grep "^<none>" | awk "{print $3}" )'
 					//sh 'docker stop challjenkNew'
 					//sh 'docker rm challjenkNew'
-					sh 'docker run --rm --name challjenkNew -d -p 65000:8000 rampup_front:${BUILD_NUMBER}'  
+					sh 'docker run --rm --name challjenkNew -d -p 65000:8000 cristiancristancho/rampup_front:${BUILD_NUMBER}'  
                                  					
 				}                 
 			}                  
