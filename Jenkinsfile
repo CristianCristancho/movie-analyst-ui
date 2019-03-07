@@ -56,7 +56,7 @@ pipeline {
 					//sh 'docker stop challjenk'
 					sh 'docker stop challjenkNew'
 					//sh 'docker rm challjenk'
-					sh 'docker run --name challjenk -d -p 8000:3030 rampup_front:latest'
+					sh 'docker run --name challjenk -d -p 8000:3030 cristiancristancho/rampup_front:latest'
                                  					
 				}                 
 			}         
