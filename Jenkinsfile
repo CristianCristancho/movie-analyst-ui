@@ -61,7 +61,7 @@ pipeline {
 							ssh -i /var/lib/jenkins/cccc.pem ubuntu@172.23.6.170 "if [ "$(docker service ps -q movieUI)" != "no such service: moviesUI" ]; then docker service create --replicas 1 -p 3030:3030 --env BACKEND_URL=172.23.9.232:3000 --name movieUI cristiancristancho/rampup_front:${BUILD_NUMBER}; else docker service update --image cristiancristancho/rampup_front:${BUILD_NUMBER} movieUI; fi"
 						'''
 					//sh 'if [ "$(docker service ps -q movieUI)" != "no such service: moviesUI" ]; then docker service create --replicas 1 -p 3030:3030 --env BACKEND_URL=172.23.9.232:3000 --name movieUI cristiancristancho/rampup_front:${BUILD_NUMBER}; else docker service update --replicas 1 --env-add BACKEND_URL=172.23.9.232:3000 cristiancristancho/rampup_front:${BUILD_NUMBER}; fi'
-					sh 'ansible --version'
+					//sh 'ansible --version'
 				}                 
 			}         
 		} 
