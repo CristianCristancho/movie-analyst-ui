@@ -57,7 +57,7 @@ pipeline {
 					// sh 'docker stop challjenk'
 					// sh 'docker rm challjenk'
 					// sh 'docker run --name challjenk -d -p 8000:3030 cristiancristancho/rampup_front:latest'
-					sh 'ssh -tt -i /home/ubuntu/Ansible/cccc.pem -o StrictHostKeyChecking=no 172.23.6.170'
+					sh 'ssh -tt -i /home/ubuntu/Ansible/cccc.pem -o StrictHostKeyChecking=no ubuntu@172.23.6.170'
 					sh 'if [ "$(docker service ps -q movieUI)" != "" ]; then docker service create --replicas 2 -p 3030:3030 -env BACKEND_URL=172.23.9.232:3000 --name movieUI cristiancristancho/rampup_front:latest; else docker service update --replicas 2 -p 3030:3030 -env BACKEND_URL=172.23.9.232:3000 --name movieUI cristiancristancho/rampup_front:latest; fi'
 				}                 
 			}         
