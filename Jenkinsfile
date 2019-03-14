@@ -35,7 +35,7 @@ pipeline {
 
 				}
 			}
-			stage('Check') {                         
+			/* stage('Check') {                         
 				steps {                                 
 					echo 'Look the new version on port 8050....'  
 					input 'check new version?'
@@ -47,8 +47,8 @@ pipeline {
 					sh 'docker run --rm --name challjenkNew -d -p 65000:3030 cristiancristancho/rampup_front:${BUILD_NUMBER}'  
                                  					
 				}                 
-			}                  
-			stage('Deploy') {                         
+			} */                  
+			/* stage('Deploy') {                         
 				steps {                                 
 					echo 'Deploying....'  
 					input 'Accept deployment?'
@@ -59,6 +59,6 @@ pipeline {
 					sh 'docker run --name challjenk -d -p 8000:3030 cristiancristancho/rampup_front:latest'
                                  					
 				}                 
-			}         
+			} */         
 		} 
 } 
